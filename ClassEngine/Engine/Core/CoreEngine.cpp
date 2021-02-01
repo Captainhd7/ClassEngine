@@ -19,12 +19,14 @@ CoreEngine* CoreEngine::GetInstance() {
 }
 
 bool CoreEngine::Oncreate(std::string name_, int width_, int height_) {
+	Debug::OnCreate();
 	window = new Window();
 	if (!window->OnCreate(name_, width_, height_)) {
 		std::cout << "Window failed to initialize" << std::endl;
 		Ondestroy();
 		return isRunning = false;
 	}
+	Debug::Info("Everything worked", __FILE__, __LINE__);
 	timer.Start();
 	return isRunning = true;
 }

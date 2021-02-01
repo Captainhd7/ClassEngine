@@ -11,8 +11,10 @@ class Window {
 public:
 	Window();
 	~Window();
+
 	bool OnCreate(std::string name_, int width_, int height_);
 	void OnDestroy();
+
 	int GetWidth() const;
 	int GetHight() const;
 	SDL_Window* GetWindow() const;

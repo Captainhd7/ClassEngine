@@ -1,8 +1,9 @@
 #ifndef COREENGINE_H
 #define COREENGINE_H
 
-#include "Window.h"
 #include <memory>
+#include "Window.h"
+#include "Timer.h"
 
 class CoreEngine {
 public:
@@ -13,7 +14,6 @@ public:
 
 	static CoreEngine* GetInstance();
 
-	
 	bool Oncreate(std::string name_, int width_, int height_);
 	void Run();
 	bool GetIsRunning();
@@ -30,6 +30,9 @@ private:
 
 	Window* window;
 	bool isRunning;
+
+	Timer timer;
+	unsigned int fps;
 };
 
 #endif COREENGINE_H

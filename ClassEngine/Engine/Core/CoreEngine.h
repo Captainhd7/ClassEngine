@@ -5,6 +5,7 @@
 #include "Window.h"
 #include "Timer.h"
 #include "Debug.h"
+#include "GameInterface.h"
 
 class CoreEngine {
 public:
@@ -15,16 +16,18 @@ public:
 
 	static CoreEngine* GetInstance();
 
-	bool Oncreate(std::string name_, int width_, int height_);
+	bool OnCreate(std::string name_, int width_, int height_);
 	void Run();
 	bool GetIsRunning();
+
+	void SetGameInterface(GameInterface* gameInterface_);
 
 private:
 	CoreEngine();
 	~CoreEngine();
 	void Update(const float deltaTime_);
 	void Render();
-	void Ondestroy();
+	void OnDestroy();
 
 	static std::unique_ptr<CoreEngine> engineInstance;
 	friend std::default_delete<CoreEngine>;
@@ -34,6 +37,8 @@ private:
 
 	Timer timer;
 	unsigned int fps;
+
+	GameInterface* gameInterface;
 };
 
 #endif COREENGINE_H

@@ -1,7 +1,9 @@
 #ifndef GAME1_H
 #define GAME1_h
 
-#include "../Engine/Core/GameInterface.h"
+#include "../Engine/Core/CoreEngine.h"
+#include "Scenes/StartScene.h"
+#include "Scenes/GameScene.h"
 
 class Game1 : public GameInterface {
 public:
@@ -12,6 +14,10 @@ public:
 	void Update(const float deltaTime_) override;
 	void Render() override;
 
+private:
+	int currentSceneNum;
+	Scene* currentScene;
+	void BuildScene();
 };
 
 #endif

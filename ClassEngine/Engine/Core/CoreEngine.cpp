@@ -7,6 +7,7 @@ CoreEngine::CoreEngine() {
 	isRunning = false;
 	fps = 60;
 	gameInterface = nullptr;
+	currentSceneNum = 0;
 }
 
 CoreEngine::~CoreEngine() {
@@ -51,12 +52,25 @@ void CoreEngine::Run() {
 	OnDestroy();
 }
 
-bool CoreEngine::GetIsRunning() {
+void CoreEngine::Exit() {
+	isRunning = false;
+}
+
+bool CoreEngine::GetIsRunning() const {
 	return isRunning;
+}
+
+int CoreEngine::GetCurrentScene() const
+{
+	return currentSceneNum;
 }
 
 void CoreEngine::SetGameInterface(GameInterface* gameInterface_) {
 	gameInterface = gameInterface_;
+}
+
+void CoreEngine::SetCurrentScene(int sceneNum_) {
+	currentSceneNum = sceneNum_;
 }
 
 void CoreEngine::Update(const float deltaTime_) {

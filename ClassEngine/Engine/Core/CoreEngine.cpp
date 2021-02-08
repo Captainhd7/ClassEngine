@@ -24,7 +24,8 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_) {
 	Debug::OnCreate();
 	window = new Window();
 	if (!window->OnCreate(name_, width_, height_)) {
-		std::cout << "Window failed to initialize" << std::endl;
+		
+		Debug::FatalError("Window failed to initialize", __FILE__, __LINE__);
 		OnDestroy();
 		return isRunning = false;
 	}
@@ -32,6 +33,7 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_) {
 	if (gameInterface) {
 		if (!gameInterface->OnCreate()) {
 			std::cout << "Game failed to initialize" << std::endl;
+			Debug::FatalError("Game failed to initialize", __FILE__, __LINE__);
 			OnDestroy();
 			return isRunning = false;
 		}
@@ -76,7 +78,7 @@ void CoreEngine::SetCurrentScene(int sceneNum_) {
 void CoreEngine::Update(const float deltaTime_) {
 	if (gameInterface) {
 		gameInterface->Update(deltaTime_);
-		std::cout << deltaTime_ << std::endl;
+		
 	}
 
 }

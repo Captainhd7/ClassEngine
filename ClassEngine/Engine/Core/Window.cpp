@@ -36,7 +36,7 @@ bool Window::OnCreate(std::string name_, int width_, int height_) {
 		return false;
 	}
 	glEnable(GL_DEPTH_TEST);
-
+	Debug::Info("OpenGL version: " + std::string((char*)glGetString(GL_VERSION)), __FILE__, __LINE__);
 	return true;
 
 }

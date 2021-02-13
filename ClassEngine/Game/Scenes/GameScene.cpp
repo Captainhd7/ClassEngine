@@ -9,7 +9,6 @@ GameScene::~GameScene()
 }
 
 bool GameScene::OnCreate(){
-	std::cout << "game scene" << std::endl;
 	Debug::Info("GameScene created", __FILE__, __LINE__);
 	return true;
 }

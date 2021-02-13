@@ -9,7 +9,6 @@ StartScene::~StartScene() {
 }
 
 bool StartScene::OnCreate() {
-	std::cout << "start scene" << std::endl;
 	Debug::Info("StartScene created", __FILE__, __LINE__);
 	CoreEngine::GetInstance()->SetCurrentScene(1);
 	return true;

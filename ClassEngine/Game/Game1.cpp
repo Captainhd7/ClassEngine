@@ -15,7 +15,7 @@ bool Game1::OnCreate() {
 		currentScene = new StartScene();
 		return currentScene->OnCreate();
 	}
-	std::cout << "Engine scene not initialized to 0" << std::endl;
+	Debug::FatalError("Engine scene not initialized to 0", __FILE__, __LINE__);
 	return false;
 }
 
@@ -45,7 +45,7 @@ void Game1::BuildScene() {
 
 	currentSceneNum = CoreEngine::GetInstance()->GetCurrentScene();
 	if (!currentScene->OnCreate()) {
-		std::cout << "Scene failed to create" << std::endl;
+		Debug::FatalError("Scene failed to create", __FILE__, __LINE__);
 		CoreEngine::GetInstance()->Exit();
 	}
 }

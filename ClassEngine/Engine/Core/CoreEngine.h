@@ -8,6 +8,8 @@
 #include "GameInterface.h"
 #include "Scene.h"
 
+#include "../Render/3D/GameObject.h"
+
 class CoreEngine {
 public:
 	CoreEngine(const CoreEngine&) = delete;

@@ -7,7 +7,6 @@
 #include <memory>
 #include <glew.h>
 #include "../Core/Debug.h"
-
 class ShaderHandler {
 public:
 	ShaderHandler(const ShaderHandler&) = delete;

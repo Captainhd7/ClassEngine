@@ -1,4 +1,4 @@
-#ifndef DEBUH_H
+#ifndef DEBUG_H
 #define DEBUG_H
 
 #include <iostream>

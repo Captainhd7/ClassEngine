@@ -16,10 +16,13 @@ bool GameScene::OnCreate(){
 	std::vector<Vertex> vertexList;
 	vertexList.reserve(6);
 	v.position = glm::vec3(-0.5f, 0.5f, 0.0f);
+	v.color = glm::vec3(0.5f, 0.3f, 0.0f);
 	vertexList.push_back(v);
 	v.position = glm::vec3(-0.5f, -0.5f, 0.0f);
+	v.color = glm::vec3(0.5f, 0.3f, 0.0f);
 	vertexList.push_back(v);
 	v.position = glm::vec3(0.5f, -0.5f, 0.0f);
+	v.color = glm::vec3(0.5f, 0.3f, 0.0f);
 	vertexList.push_back(v);
 
 	vertexList.push_back(v);
@@ -28,7 +31,7 @@ bool GameScene::OnCreate(){
 	v.position = glm::vec3(-0.5f, 0.5f, 0.0f);
 	vertexList.push_back(v);
 
-	Model* model = new Model();
+	Model* model = new Model(ShaderHandler::GetInstance()->GetShader("colorShader"));
 	model->AddMesh(new Mesh(vertexList));
 	shape = new GameObject(model);
 

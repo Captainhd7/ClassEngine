@@ -18,7 +18,6 @@ bool GameScene::OnCreate(){
 	std::vector<Vertex> vertexList;
 
 	//CUBE
-	/*
 	{
 		vertexList.reserve(36);
 
@@ -166,8 +165,10 @@ bool GameScene::OnCreate(){
 		v.color = glm::vec3(0.982f, 0.099f, 0.879f);
 		vertexList.push_back(v);
 	}	
-	*/
-	
+
+	//Triagnle(s)
+	/*
+	{
 	vertexList.reserve(6);
 	v.position = glm::vec3(-0.5f, 0.5f, 0.0f);
 	v.color = glm::vec3(1.0f, 0.0f, 0.0f);
@@ -187,7 +188,8 @@ bool GameScene::OnCreate(){
 	v.position = glm::vec3(-0.5f, 0.5f, 0.0f);
 	v.color = glm::vec3(1.0f, 0.0f, 0.0f);
 	vertexList.push_back(v);
-	
+	}
+	*/
 
 	model = new Model(ShaderHandler::GetInstance()->GetShader("colorShader"));
 	model->AddMesh(new Mesh(vertexList, ShaderHandler::GetInstance()->GetShader("colorShader")));
@@ -203,6 +205,6 @@ void GameScene::Update(const float deltaTime_){
 }
 
 void GameScene::Render() {
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);	//wireframe
 	shape->Render();
 }

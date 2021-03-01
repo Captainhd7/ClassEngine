@@ -9,7 +9,7 @@ public:
 	Model(GLuint shaderProgram_, glm::vec3 position_ = glm::vec3(), float angle_ = 0.0f, glm::vec3 rotation_ = glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3 scale_ = glm::vec3(1.0f));
 	~Model();
 
-	void Render();
+	void Render(Camera* camera_);
 	void AddMesh(Mesh* mesh_);
 
 	glm::vec3 GetPosition() const;

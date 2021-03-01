@@ -6,6 +6,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "../../Camera/Camera.h"
+
 struct Vertex {
 	glm::vec3 position;
 	glm::vec3 normal;
@@ -18,7 +20,7 @@ public:
 	Mesh(std::vector<Vertex>&vertexList_, GLuint shaderProgram_);
 	~Mesh();
 
-	void Render(glm::mat4 transform_);
+	void Render(Camera* camera_, glm::mat4 transform_);
 
 private:
 	void GenerateBuffers();
@@ -26,7 +28,7 @@ private:
 	GLuint VAO, VBO;	
 	std::vector<Vertex> vertexList;
 	GLuint shaderProgram;
-	GLuint modelLoc;
+	GLuint modelLoc, viewLoc, projectionLoc;
 
 };
 

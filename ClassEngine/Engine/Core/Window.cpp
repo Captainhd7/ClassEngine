@@ -37,6 +37,9 @@ bool Window::OnCreate(std::string name_, int width_, int height_) {
 	}
 	
 	Debug::Info("OpenGL version: " + std::string((char*)glGetString(GL_VERSION)), __FILE__, __LINE__);
+	
+	glViewport(0, 0, width, height);
+	
 	return true;
 
 }
@@ -51,7 +54,7 @@ int Window::GetWidth() const {
 	return width;
 }
 
-int Window::GetHight() const {
+int Window::GetHeight() const {
 	return height;
 }
 

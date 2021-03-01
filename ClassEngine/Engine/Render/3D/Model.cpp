@@ -1,7 +1,7 @@
 #include "Model.h"
 
 Model::Model(GLuint shaderProgram_, glm::vec3 position_, float angle_, glm::vec3 rotation_, glm::vec3 scale_) {
-	//meshes = (std::vector<Mesh*>());
+	meshes = (std::vector<Mesh*>());
 	shaderProgram = shaderProgram_;
 	position = position_;
 	angle = angle_;
@@ -19,10 +19,10 @@ Model::~Model() {
 	}
 }
 
-void Model::Render() {
+void Model::Render(Camera* camera_) {
 	glUseProgram(shaderProgram);
 	for (auto m : meshes) {
-		m->Render(GetTransfrom());
+		m->Render(camera_, GetTransfrom());
 	}
 
 }

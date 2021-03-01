@@ -16,7 +16,7 @@ public:
 	void OnDestroy();
 
 	int GetWidth() const;
-	int GetHight() const;
+	int GetHeight() const;
 	SDL_Window* GetWindow() const;
 
 private:

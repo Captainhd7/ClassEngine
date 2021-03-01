@@ -17,12 +17,14 @@ Mesh::~Mesh() {
 	vertexList.clear();
 }
 
-void Mesh::Render(glm::mat4 transform_) {
+void Mesh::Render(Camera* camera_, glm::mat4 transform_) {
 	glBindVertexArray(VAO);
 
 	glEnable(GL_DEPTH_TEST);
 
 	glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(transform_));
+	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(camera_->GetView()));
+	glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(camera_->GetPerspective()));
 
 	glDrawArrays(GL_TRIANGLES, 0, vertexList.size());
 
@@ -56,5 +58,6 @@ void Mesh::GenerateBuffers() {
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 	modelLoc = glGetUniformLocation(shaderProgram, "model");
-
+	viewLoc = glGetUniformLocation(shaderProgram, "view");
+	projectionLoc = glGetUniformLocation(shaderProgram, "projection");
 }

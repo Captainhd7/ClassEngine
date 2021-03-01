@@ -14,6 +14,9 @@ GameScene::~GameScene() {
 bool GameScene::OnCreate(){
 	Debug::Info("GameScene created", __FILE__, __LINE__);
 
+	CoreEngine::GetInstance()->SetCamera(new Camera());
+	CoreEngine::GetInstance()->GetCamera()->SetPosition(glm::vec3(0.0f, 0.0f, 4.0f));
+
 	Vertex v;
 	std::vector<Vertex> vertexList;
 
@@ -206,5 +209,5 @@ void GameScene::Update(const float deltaTime_){
 
 void GameScene::Render() {
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);	//wireframe
-	shape->Render();
+	shape->Render(CoreEngine::GetInstance()->GetCamera());
 }

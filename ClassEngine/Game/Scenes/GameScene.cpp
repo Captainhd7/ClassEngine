@@ -203,7 +203,6 @@ bool GameScene::OnCreate(){
 }
 
 void GameScene::Update(const float deltaTime_){
-	std::cout << deltaTime_ << std::endl;
 	model->SetAngle(model->GetAngle() + 0.005f);
 }
 

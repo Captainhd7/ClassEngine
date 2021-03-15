@@ -154,6 +154,7 @@
     <ClCompile Include="Engine\Render\3D\Mesh.cpp" />
     <ClCompile Include="Engine\Render\3D\Model.cpp" />
     <ClCompile Include="Engine\Graphics\ShaderHandler.cpp" />
+    <ClCompile Include="Engine\Graphics\TextureHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Camera\Camera.h" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Engine\Render\3D\Mesh.h" />
     <ClInclude Include="Engine\Render\3D\Model.h" />
     <ClInclude Include="Engine\Graphics\ShaderHandler.h" />
+    <ClInclude Include="Engine\Graphics\TextureHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Shader\ColorFragmentShader.glsl" />

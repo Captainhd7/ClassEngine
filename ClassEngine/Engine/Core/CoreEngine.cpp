@@ -32,6 +32,8 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_) {
 
 	ShaderHandler::GetInstance()->CreateProgram("colorShader", "Engine/Shader/ColorVertexShader.glsl", "Engine/Shader/ColorFragmentShader.glsl");
 
+	ShaderHandler::GetInstance()->CreateProgram("basicShader", "Engine/Shader/VertexShader.glsl", "Engine/Shader/FragmentShader.glsl");
+
 	if (gameInterface) {
 		if (!gameInterface->OnCreate()) {
 			std::cout << "Game failed to initialize" << std::endl;
@@ -115,6 +117,7 @@ void CoreEngine::Render() {
 
 void CoreEngine::OnDestroy() {
 	ShaderHandler::GetInstance()->OnDestroy();
+	TextureHandler::GetInstace()->OnDestroy();
 
 	delete gameInterface;
 	gameInterface = nullptr;

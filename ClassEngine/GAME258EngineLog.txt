@@ -1,4 +1,4 @@
 [INFO]: OpenGL version: 4.5.0 NVIDIA 460.89 in: E:\School\Semester 4\ClassEngine\ClassEngine\Engine\Core\Window.cpp on line: 39
 [INFO]: StartScene created in: E:\School\Semester 4\ClassEngine\ClassEngine\Game\Scenes\StartScene.cpp on line: 12
-[INFO]: Everything worked in: E:\School\Semester 4\ClassEngine\ClassEngine\Engine\Core\CoreEngine.cpp on line: 44
+[INFO]: Everything worked in: E:\School\Semester 4\ClassEngine\ClassEngine\Engine\Core\CoreEngine.cpp on line: 46
 [INFO]: GameScene created in: E:\School\Semester 4\ClassEngine\ClassEngine\Game\Scenes\GameScene.cpp on line: 15

@@ -108,5 +108,7 @@
   <ItemGroup>
     <None Include="Engine\Shader\ColorVertexShader.glsl" />
     <None Include="Engine\Shader\ColorFragmentShader.glsl" />
+    <None Include="Engine\Shader\VertexShader.glsl" />
+    <None Include="Engine\Shader\FragmentShader.glsl" />
   </ItemGroup>
 </Project>

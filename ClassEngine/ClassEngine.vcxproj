@@ -176,6 +176,8 @@
   <ItemGroup>
     <None Include="Engine\Shader\ColorFragmentShader.glsl" />
     <None Include="Engine\Shader\ColorVertexShader.glsl" />
+    <None Include="Engine\Shader\FragmentShader.glsl" />
+    <None Include="Engine\Shader\VertexShader.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

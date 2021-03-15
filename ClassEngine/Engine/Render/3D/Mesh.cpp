@@ -1,11 +1,12 @@
 #include "Mesh.h"
 
-Mesh::Mesh(std::vector<Vertex>& vertexList_, GLuint shaderProgram_) {
-	VAO = 0;
-	VBO = 0;
-	vertexList = (std::vector<Vertex>());
+Mesh::Mesh(std::vector<Vertex>& vertexList_, GLuint textureID_, GLuint shaderProgram_) {
+	//VAO = 0;
+	//VBO = 0;
+	//vertexList = (std::vector<Vertex>());
 
 	vertexList = vertexList_;
+	textureID = textureID_;
 	shaderProgram = shaderProgram_;
 	GenerateBuffers();
 }
@@ -18,6 +19,10 @@ Mesh::~Mesh() {
 }
 
 void Mesh::Render(Camera* camera_, glm::mat4 transform_) {
+	glUniform1i(textureLoc, 0);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, textureID);
+
 	glBindVertexArray(VAO);
 
 	glEnable(GL_DEPTH_TEST);
@@ -60,4 +65,5 @@ void Mesh::GenerateBuffers() {
 	modelLoc = glGetUniformLocation(shaderProgram, "model");
 	viewLoc = glGetUniformLocation(shaderProgram, "view");
 	projectionLoc = glGetUniformLocation(shaderProgram, "projection");
+	textureLoc = glGetUniformLocation(shaderProgram, "inputTexture");
 }

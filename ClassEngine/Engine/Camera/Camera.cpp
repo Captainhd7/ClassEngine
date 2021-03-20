@@ -32,9 +32,8 @@ Camera::~Camera() {
 	}
 }
 
-void Camera::AddLight(glm::vec3 position_, float ambient_, float diffuse_, float specular_, glm::vec3 color_) {
-	LightSource* t = new LightSource(position_, ambient_, diffuse_, specular_, color_);
-	lights.push_back(t);
+void Camera::AddLight(LightSource* light) {
+	lights.push_back(light);
 }
 
 void Camera::SetPosition(glm::vec3 position_) {

@@ -13,7 +13,7 @@ public:
 	Camera();
 	~Camera();
 
-	void AddLight(glm::vec3 position_, float ambient_, float diffuse_, float specular_, glm::vec3 color_);
+	void AddLight(LightSource* light);
 
 	void SetPosition(glm::vec3 position_);
 	void SetRotation(float yaw_, float pitch_);

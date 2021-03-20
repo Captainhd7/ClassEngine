@@ -35,6 +35,7 @@ void Mesh::Render(Camera* camera_, glm::mat4 transform_) {
 	glUniform3fv(lightPosLoc, 1, glm::value_ptr(camera_->GetLightSources()[0]->GetColor()));
 	glUniform1f(lightAmbientLoc, camera_->GetLightSources()[0]->GetAmbient());
 	glUniform1f(lightDiffuseLoc, camera_->GetLightSources()[0]->GetDiffuse());
+	glUniform1f(lightSpecularLoc, camera_->GetLightSources()[0]->GetSpecular());
 	glUniform3fv(lightColorLoc, 1, glm::value_ptr(camera_->GetLightSources()[0]->GetColor()));
 
 	glDrawArrays(GL_TRIANGLES, 0, vertexList.size());

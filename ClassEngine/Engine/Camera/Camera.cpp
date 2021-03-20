@@ -2,6 +2,8 @@
 
 #include "../Core/CoreEngine.h"
 
+std::vector<LightSource*> Camera::lights = std::vector<LightSource*>();
+
 Camera::Camera() {
 	fieldOfView = 45.0f;
 	forward = glm::vec3(0.0f, 0.0f, -1.0f);
@@ -21,7 +23,18 @@ Camera::Camera() {
 }
 
 Camera::~Camera() {
+	if (lights.size() > 0) {
+		for (auto t : lights) {
+			delete t;
+			t = nullptr;
+		}
+		lights.clear();
+	}
+}
 
+void Camera::AddLight(glm::vec3 position_, float ambient_, float diffuse_, float specular_, glm::vec3 color_) {
+	LightSource* t = new LightSource(position_, ambient_, diffuse_, specular_, color_);
+	lights.push_back(t);
 }
 
 void Camera::SetPosition(glm::vec3 position_) {
@@ -53,6 +66,10 @@ glm::mat4 Camera::GetOrthographic() const {
 glm::vec3 Camera::GetPosition() const {
 
 	return position;
+}
+
+std::vector<LightSource*> Camera::GetLightSources() const {
+	return lights;
 }
 
 void Camera::UpdateCameraVectors() {

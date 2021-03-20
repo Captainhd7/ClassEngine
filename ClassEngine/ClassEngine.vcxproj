@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -147,6 +147,7 @@
     <ClCompile Include="Engine\Render\3D\GameObject.cpp" />
     <ClCompile Include="Game\Scenes\GameScene.cpp" />
     <ClCompile Include="Game\Game1.cpp" />
+    <ClCompile Include="Engine\FX\LightSource.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Engine\Core\Window.cpp" />
     <ClCompile Include="Engine\Core\Timer.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="Engine\Render\3D\Model.h" />
     <ClInclude Include="Engine\Graphics\ShaderHandler.h" />
     <ClInclude Include="Engine\Graphics\TextureHandler.h" />
+    <ClInclude Include="Engine\FX\LightSource.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Shader\ColorFragmentShader.glsl" />

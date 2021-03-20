@@ -30,6 +30,8 @@ private:
 	GLuint shaderProgram;
 	GLuint textureID;
 	GLuint modelLoc, viewLoc, projectionLoc, textureLoc;
+	GLuint viewPositionLoc, lightPosLoc, lightAmbientLoc, lightDiffuseLoc, lightSpecularLoc, lightColorLoc;
+
 
 };
 

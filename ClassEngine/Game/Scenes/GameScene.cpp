@@ -16,6 +16,7 @@ bool GameScene::OnCreate(){
 
 	CoreEngine::GetInstance()->SetCamera(new Camera());
 	CoreEngine::GetInstance()->GetCamera()->SetPosition(glm::vec3(0.0f, 0.0f, 4.0f));
+	CoreEngine::GetInstance()->GetCamera()->AddLight(new LightSource(glm::vec3(0.0f, 0.0f, 2.0f), 1.0f, 0.5f, 0.5f, glm::vec3(0.0f, 0.0f, 1.0f)));
 	TextureHandler::GetInstace()->CreateTexture("CheckerboardTexture", "./Resources/Textures/CheckerboardTexture.png");
 
 	Vertex v;

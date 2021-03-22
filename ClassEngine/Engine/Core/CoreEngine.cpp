@@ -30,7 +30,7 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_) {
 		return isRunning = false;
 	}
 
-	ShaderHandler::GetInstance()->CreateProgram("colorShader", "Engine/Shader/ColorVertexShader.glsl", "Engine/Shader/ColorFragmentShader.glsl");
+	//ShaderHandler::GetInstance()->CreateProgram("colorShader", "Engine/Shader/ColorVertexShader.glsl", "Engine/Shader/ColorFragmentShader.glsl");
 
 	ShaderHandler::GetInstance()->CreateProgram("basicShader", "Engine/Shader/VertexShader.glsl", "Engine/Shader/FragmentShader.glsl");
 
@@ -107,7 +107,7 @@ void CoreEngine::Update(const float deltaTime_) {
 }
 
 void CoreEngine::Render() {
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	if (gameInterface) {
 		gameInterface->Render();

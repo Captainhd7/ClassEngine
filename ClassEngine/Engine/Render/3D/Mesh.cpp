@@ -32,7 +32,7 @@ void Mesh::Render(Camera* camera_, glm::mat4 transform_) {
 	glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(camera_->GetPerspective()));
 
 	glUniform3f(viewPositionLoc, camera_->GetPosition().x, camera_->GetPosition().y, camera_->GetPosition().z);
-	glUniform3fv(lightPosLoc, 1, glm::value_ptr(camera_->GetLightSources()[0]->GetColor()));
+	glUniform3fv(lightPosLoc, 1, glm::value_ptr(camera_->GetLightSources()[0]->GetPosition()));
 	glUniform1f(lightAmbientLoc, camera_->GetLightSources()[0]->GetAmbient());
 	glUniform1f(lightDiffuseLoc, camera_->GetLightSources()[0]->GetDiffuse());
 	glUniform1f(lightSpecularLoc, camera_->GetLightSources()[0]->GetSpecular());

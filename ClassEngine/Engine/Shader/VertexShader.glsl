@@ -18,6 +18,6 @@ void main(){
 	gl_Position = projection * view * model * vec4(position, 1.0f);
 	Color = color;
 	TexCoords = texCoords;
-	Normal = normal * mat3(transpose(inverse(model)));
+	Normal = mat3(transpose(inverse(model))) * normal;
 	FragPosition = vec3(model * vec4(position, 1.0f));
 }

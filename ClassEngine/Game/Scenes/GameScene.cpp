@@ -241,15 +241,18 @@ bool GameScene::OnCreate(){
 		vertexList.push_back(v);
 	}
 
-	model = new Model(ShaderHandler::GetInstance()->GetShader("basicShader"));
-	model->AddMesh(new Mesh(vertexList, TextureHandler::GetInstace()->GetTexture("CheckerboardTexture"), ShaderHandler::GetInstance()->GetShader("basicShader")));
+	model = new Model("", "", ShaderHandler::GetInstance()->GetShader("basicShader"));
+	SubMesh subMesh;
+	subMesh.vertexList = vertexList;
+	subMesh.textureID = TextureHandler::GetInstace()->GetTexture("CheckerboardTexture");
+	model->AddMesh(new Mesh(subMesh, ShaderHandler::GetInstance()->GetShader("basicShader")));
 	shape = new GameObject(model);
 
 	return true;
 }
 
 void GameScene::Update(const float deltaTime_){
-	model->SetAngle(model->GetAngle() + 0.005f);
+	shape->Update(deltaTime_);
 }
 
 void GameScene::Render() {

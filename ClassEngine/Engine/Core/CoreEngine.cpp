@@ -24,7 +24,6 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_) {
 	Debug::OnCreate();
 	window = new Window();
 	if (!window->OnCreate(name_, width_, height_)) {
-		
 		Debug::FatalError("Window failed to initialize", __FILE__, __LINE__);
 		OnDestroy();
 		return isRunning = false;
@@ -76,7 +75,7 @@ float CoreEngine::GetScreenWidth() const
 	return static_cast<float>(window->GetWidth());
 }
 
-float CoreEngine::GetSCreenHeight() const
+float CoreEngine::GetScreenHeight() const
 {
 	return static_cast<float>(window->GetHeight());
 }
@@ -101,13 +100,14 @@ void CoreEngine::SetCamera(Camera* camera_) {
 void CoreEngine::Update(const float deltaTime_) {
 	if (gameInterface) {
 		gameInterface->Update(deltaTime_);
-		
 	}
 
 }
 
 void CoreEngine::Render() {
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	//background color
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);	
+	
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	if (gameInterface) {
 		gameInterface->Render();

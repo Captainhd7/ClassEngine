@@ -14,9 +14,9 @@ Camera::Camera() {
 	yaw = -90.0f;
 	pitch = 0.0f;
 
-	perspective = glm::perspective(fieldOfView, CoreEngine::GetInstance()->GetScreenWidth() / CoreEngine::GetInstance()->GetSCreenHeight(), nearPlane, farPlane);
+	perspective = glm::perspective(fieldOfView, CoreEngine::GetInstance()->GetScreenWidth() / CoreEngine::GetInstance()->GetScreenHeight(), nearPlane, farPlane);
 
-	orthographic = glm::ortho(0.0f, CoreEngine::GetInstance()->GetScreenWidth(), 0.0f, CoreEngine::GetInstance()->GetSCreenHeight(), -1.0f, 1.0f);
+	orthographic = glm::ortho(0.0f, CoreEngine::GetInstance()->GetScreenWidth(), 0.0f, CoreEngine::GetInstance()->GetScreenHeight(), -1.0f, 1.0f);
 
 	UpdateCameraVectors();
 
@@ -48,22 +48,18 @@ void Camera::SetRotation(float yaw_, float pitch_) {
 }
 
 glm::mat4 Camera::GetView() const {
-
 	return view;
 }
 
 glm::mat4 Camera::GetPerspective() const {
-
 	return perspective;
 }
 
 glm::mat4 Camera::GetOrthographic() const {
-
 	return orthographic;
 }
 
 glm::vec3 Camera::GetPosition() const {
-
 	return position;
 }
 

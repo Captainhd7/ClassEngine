@@ -31,7 +31,7 @@ public:
 	bool GetIsRunning() const;
 	int GetCurrentScene() const;
 	float GetScreenWidth() const;
-	float GetSCreenHeight() const;
+	float GetScreenHeight() const;
 	Camera* GetCamera() const;
 
 	void SetGameInterface(GameInterface* gameInterface_);

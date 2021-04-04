@@ -8,6 +8,7 @@
 #include "GameInterface.h"
 #include "Scene.h"
 
+#include "../Render/SceneGraph.h"
 #include "../Render/3D/GameObject.h"
 
 #include "../Graphics/ShaderHandler.h"

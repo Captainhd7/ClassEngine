@@ -15,10 +15,12 @@ bool GameScene::OnCreate(){
 	Debug::Info("GameScene created", __FILE__, __LINE__);
 
 	CoreEngine::GetInstance()->SetCamera(new Camera());
-	CoreEngine::GetInstance()->GetCamera()->SetPosition(glm::vec3(0.0f, 0.0f, 4.0f));
+	CoreEngine::GetInstance()->GetCamera()->SetPosition(glm::vec3(0.0f, 0.0f, 8.0f));
 	CoreEngine::GetInstance()->GetCamera()->AddLight(new LightSource(glm::vec3(0.0f, 0.0f, 2.0f), 0.1f, 0.5f, 0.5f, glm::vec3(1.0f, 1.0f, 1.0f)));
 
-	model = new Model("Resources/Models/Dice.obj", "Resources/Materials/Dice.mtl", ShaderHandler::GetInstance()->GetShader("basicShader"));
+	model = new Model("Resources/Models/Bleb_bru.obj", "Resources/Materials/Bleb_bru.mtl", ShaderHandler::GetInstance()->GetShader("basicShader"));
+	//model = new Model("Resources/Models/smalleredit.obj", "Resources/Materials/smalleredit.mtl", ShaderHandler::GetInstance()->GetShader("basicShader"));
+	//model = new Model("Resources/Models/Apple.obj", "Resources/Materials/Apple.mtl", ShaderHandler::GetInstance()->GetShader("basicShader"));
 	shape = new GameObject(model);
 
 	return true;

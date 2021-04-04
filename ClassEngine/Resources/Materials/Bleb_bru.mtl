@@ -42,7 +42,6 @@ newmtl Bleb_Unrigged_lambert6SG
 	Ni 1.5000
 	Ke 0.0000 0.0000 0.0000
 	illum 2
-	map_Kd C:\Users\Connor\Desktop\mouth-Smile.png
 
 newmtl Bleb_Unrigged_lambert5SG
 	Kd 0.7800 0.3400 0.3400

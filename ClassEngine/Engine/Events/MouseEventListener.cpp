@@ -30,7 +30,7 @@ void MouseEventListener::Update(SDL_Event e_) {
 		break;
 	case SDL_MOUSEWHEEL:
 		UpdateMousePos();
-		NotifyMouseScrool(e_.wheel.y);
+		NotifyMouseScroll(e_.wheel.y);
 		break;
 	
 	default:
@@ -39,19 +39,27 @@ void MouseEventListener::Update(SDL_Event e_) {
 }
 
 void MouseEventListener::NotifyMousePressed(int buttonType_) {
-
+	if (engineInstance) {
+		engineInstance->NotifyMousePressed(mouse, buttonType_);
+	}
 }
 
 void MouseEventListener::NotifyMouseReleased(int buttonType_) {
-
+	if (engineInstance) {
+		engineInstance->NotifyMouseReleased(mouse, buttonType_);
+	}
 }
 
 void MouseEventListener::NotifyMouseMove() {
-
+	if (engineInstance) {
+		engineInstance->NotifyMouseMove(mouse);
+	}
 }
 
-void MouseEventListener::NotifyMouseScrool(int y_) {
-
+void MouseEventListener::NotifyMouseScroll(int y_) {
+	if (engineInstance) {
+		engineInstance->NotifyMouseScroll(y_);
+	}
 }
 
 glm::vec2 MouseEventListener::GetPrevMousePos() {

@@ -21,7 +21,7 @@ public:
 	static void NotifyMousePressed(int buttonType_);
 	static void NotifyMouseReleased(int buttonType_);
 	static void NotifyMouseMove();
-	static void NotifyMouseScrool(int y_);
+	static void NotifyMouseScroll(int y_);
 
 	static glm::vec2 GetPrevMousePos();
 	static glm::vec2 GetMousePos();

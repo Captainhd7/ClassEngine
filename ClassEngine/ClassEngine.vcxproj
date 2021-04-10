@@ -145,6 +145,7 @@
     <ClCompile Include="Engine\Core\Debug.cpp" />
     <ClCompile Include="Engine\Core\CoreEngine.cpp" />
     <ClCompile Include="Engine\Render\3D\GameObject.cpp" />
+    <ClCompile Include="Engine\Events\EventListener.cpp" />
     <ClCompile Include="Game\Scenes\GameScene.cpp" />
     <ClCompile Include="Game\Game1.cpp" />
     <ClCompile Include="Engine\FX\LightSource.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="Engine\Render\SceneGraph.cpp" />
     <ClCompile Include="Engine\Graphics\MaterialHandler.cpp" />
     <ClCompile Include="Engine\FX\MaterialLoader.cpp" />
+    <ClCompile Include="Engine\Events\MouseEventListener.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Camera\Camera.h" />
@@ -170,6 +172,7 @@
     <ClInclude Include="Engine\Core\Window.h" />
     <ClInclude Include="Engine\Core\Timer.h" />
     <ClInclude Include="Engine\Render\3D\GameObject.h" />
+    <ClInclude Include="Engine\Events\EventListener.h" />
     <ClInclude Include="Game\Scenes\GameScene.h" />
     <ClInclude Include="Game\Game1.h" />
     <ClInclude Include="Game\Scenes\StartScene.h" />
@@ -182,6 +185,7 @@
     <ClInclude Include="Engine\Render\SceneGraph.h" />
     <ClInclude Include="Engine\Graphics\MaterialHandler.h" />
     <ClInclude Include="Engine\FX\MaterialLoader.h" />
+    <ClInclude Include="Engine\Events\MouseEventListener.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Shader\ColorFragmentShader.glsl" />

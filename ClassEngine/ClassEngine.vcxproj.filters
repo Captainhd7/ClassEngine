@@ -146,6 +146,9 @@
     <ClInclude Include="Engine\Events\EventListener.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\Math\BoundingBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Shader\ColorVertexShader.glsl" />

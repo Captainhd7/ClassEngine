@@ -67,6 +67,9 @@ void LoadOBJModel::LoadModel(const std::string& filePath_) {
 
 	std::string line;
 
+	boundingBox.minVert = glm::vec3(FLT_MAX);
+	boundingBox.maxVert = glm::vec3(FLT_MIN);
+
 	while (std::getline(in, line)) {
 		//VERTEX DATA
 		if (line.substr(0, 2) == "v ") {

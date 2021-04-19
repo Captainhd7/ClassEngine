@@ -33,7 +33,7 @@ bool CollisionDetection::RayObbIntersection(Ray* ray_, BoundingBox* box_) {
 	float tMin = CoreEngine::GetInstance()->GetCamera()->GetNearPlane();
 	float tMax = CoreEngine::GetInstance()->GetCamera()->GetFarPlane();
 	glm::vec3 worldPos(modelMatrix[3].x, modelMatrix[3].y, modelMatrix[3].z);
-	glm::vec3 delta = worldPos = rayOrigin;
+	glm::vec3 delta = worldPos - rayOrigin;
 
 	//X axis
 	glm::vec3 xAxis(modelMatrix[0].x, modelMatrix[0].y, modelMatrix[0].z);

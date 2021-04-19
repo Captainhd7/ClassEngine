@@ -22,7 +22,7 @@ void MouseEventListener::Update(SDL_Event e_) {
 		break;
 	case SDL_MOUSEBUTTONUP:
 		UpdateMousePos();
-		NotifyMousePressed(e_.button.button);
+		NotifyMouseReleased(e_.button.button);
 		break;
 	case SDL_MOUSEMOTION: 
 		UpdateMousePos();

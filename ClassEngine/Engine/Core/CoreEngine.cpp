@@ -104,8 +104,8 @@ void CoreEngine::NotifyMousePressed(glm::vec2 mouse_, int buttonType_)
 {
 }
 
-void CoreEngine::NotifyMouseReleased(glm::vec2 mouse_, int buttonType_)
-{
+void CoreEngine::NotifyMouseReleased(glm::vec2 mouse_, int buttonType_) {
+	CollisionHandler::GetInstance()->MouseUpdate(mouse_, buttonType_);
 }
 
 void CoreEngine::NotifyMouseMove(glm::vec2 mouse_) {
@@ -142,6 +142,7 @@ void CoreEngine::OnDestroy() {
 	ShaderHandler::GetInstance()->OnDestroy();
 	TextureHandler::GetInstace()->OnDestroy();	
 	MaterialHandler::GetInstance()->OnDestroy();
+	CollisionHandler::GetInstance()->OnDestroy();
 	SceneGraph::GetInstance()->OnDestroy();
 
 	delete gameInterface;

@@ -23,7 +23,7 @@ bool GameScene::OnCreate(){
 	SceneGraph::GetInstance()->AddModel(appleModel);
 
 	SceneGraph::GetInstance()->AddGameObject(new GameObject(blebModel, glm::vec3(0.0f)), "Bleb");
-	SceneGraph::GetInstance()->AddGameObject(new GameObject(appleModel, glm::vec3(0.0f, 4.0f, 0.0f)), "Apple");
+	SceneGraph::GetInstance()->AddGameObject(new GameObject(appleModel, glm::vec3(0.0f, 6.0f, 0.0f)), "Apple");
 
 	blebModel = nullptr;
 	appleModel = nullptr;

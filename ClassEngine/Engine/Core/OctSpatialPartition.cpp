@@ -47,6 +47,7 @@ void OctNode::Octify(int depth_) {
 		children[static_cast<int>(OctChildren::OCT_BLR)] = new OctNode(glm::vec3(octBounds->minVert.x, octBounds->minVert.y, octBounds->minVert.z), half, this);
 		children[static_cast<int>(OctChildren::OCT_BRR)] = new OctNode(glm::vec3(octBounds->minVert.x + half, octBounds->minVert.y, octBounds->minVert.z), half, this);
 		children[static_cast<int>(OctChildren::OCT_TRR)] = new OctNode(glm::vec3(octBounds->minVert.x + half, octBounds->minVert.y + half, octBounds->minVert.z), half, this);
+		childNum += 8;
 	}
 
 
@@ -142,7 +143,8 @@ void OctSpatialPartition::AddObjectToCell(OctNode* cell_, GameObject* obj_) {
 	if (cell_->IsLeaf()) {
 		if (obj_->GetBoundingBox().Intersects(cell_->GetBoundingBox())) {
 			cell_->AddCollisionObject(obj_);
-			std::cout << obj_->GetTag() << " added to cell " << glm::to_string(glm::vec3(cell_->octBounds->transform[3])) << std::endl;
+			
+			std::cout << obj_->GetTag() << " added to cell " << glm::to_string(cell_->octBounds->maxVert) << std::endl;
 		}
 	}
 	else {
